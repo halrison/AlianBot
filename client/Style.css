@@ -1,0 +1,83 @@
+﻿body{
+    text-align:center;
+    padding:0px;
+    height:1000px;
+}
+nav{
+    height:45px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height:45px;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change the link color to #111 (black) on hover */
+nav ul li a:hover {
+            background-color: #111;
+        }
+    #twitch:hover{
+        background-color:mediumpurple;
+    }
+    #youtube:hover{
+        background-color:red;
+    }
+   .right{
+       float:right;
+   }
+aside{
+    width:171px;
+    height:900px;
+    background-color: #f1f1f1;
+    float:left;
+}
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 171px;    
+}
+
+aside ul li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+    /* Change the link color on hover */
+aside ul li a:hover {
+        background-color: #555;
+        color: white;
+    }
+    .active {
+    background-color: #4CAF50;
+    color: white;
+} 
+main{
+    float:left;
+}
+fieldset{
+    display:none;
+}
+table {
+    width: 100%;
+}
+footer{
+    clear:both;
+    height:55px;
+}

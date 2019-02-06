@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Style.css" />
+        <meta charset="utf-8" />
+        <title>儀表板</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    </head>
+    <body>
+        <script src="commands.js"></script>
+        <header><nav><ul>                    
+            <li><a >Twitch狀態：未連線</a></li>
+            <li><a href="#" id="twitch">連線</a></li>
+            <li><a >Youtube狀態：未連線</a></li>
+            <li><a href="#" id="youtube">連線</a></li>
+            <li class="right"><a href="logout.php">登出</a></li>
+            <li class="right"><a id="nickname"></a></li>            
+        </ul></nav></header>
+        <aside><ul>
+            <li><a href="dashboard.html">儀表板</a></li>
+            <li><a class="active">指令</a></li>
+            <li><a href="vote.html">投票</a></li>
+            <li><a href="request.html">點播</a></li>
+        </ul></aside>
+        <main>
+            <div id="error"></div>
+            <form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>關鍵字</th>
+                            <th>回應</th>
+                            <th colspan="2">動作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input name="keyword" type="text" /></td>
+                            <td><input name="response" type="text" /></td>
+                            <td colspan="2"><input type="submit" value="新增" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </main>
+        <footer> 2019 海力森製作</footer>
+    </body>
+</html>
