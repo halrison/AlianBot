@@ -1,4 +1,5 @@
 $(function () {
+    var error = '';
     $("table").ready(function () {
         $.ajax({
             url: 'search.php',
@@ -18,14 +19,26 @@ $(function () {
                         type: 'POST',
                         data: {
                             item: 'request',
-                            id:$("tr:eq(i)>td:first").text()
+                            id: $("tr:eq(i)>td:first").text()
                         }
                     }).done(function (result2) {
                         var row = JSON.parse(result2);
                         $("tr:eq(i)>td:eq(4)").empty().text(table[i].PlayStatus);
-                    }).fail()
+                    }).fail(error = '播放失敗，請稍後再試');
+                });
+                $("button[name='delete']")[i].click(function () {
+                    $.ajax({
+                        url: 'delete.php',
+                        type: 'POST',
+                        data: {
+                            item: 'request',
+                            id: $("tr:eq(i)>td:first").text()
+                        }
+                    }).done($("tr:eq(i)").remove())
+                    .fail(error = '刪除歌曲失敗，請稍後再試');
                 })
             }          
         })
     })
+    $("#error").text(error);
 })
