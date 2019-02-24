@@ -1,48 +1,68 @@
-﻿$(function () {
-    var topic = $("input[name='topic']").val()
-    ,options = []
-    ,rows = $("tr:gt(0)")
-    ,option =rows.find("td").eq(1)
-    ,button1 = $(".button1")
-    ,button2 =$(".button2")
-    for (var row = 0; row <= rows.length;row++) {
-        let i = 0;
-        button1[row].live("click",function () {
-            i++;
-            if (i % 2 == 0) {
-                button1[row].val( '確定');
-                button2[row].val( '取消');
-                option[row].html("<input name='options' type='text' value='"+ options[i]+"'/>");
-            } else {
-                button1[row].val('修改');
-                button2[row].val('刪除');
-                const j = $.inArray(option[row].text(), options);
-                if (j == -1) { options.push(option[row].text()); }
-                else { options[i] = option[row].text();}
-            }
-        })
-        button2[row].live("click",function () {
-            i++;
-            if (i % 2 == 0) { rows[row].remove(); }
-            else {
-                button2[row].val('刪除');
-                button1[row].val('修改')
-                option[row].text(options[row]);
-            }
-        })
-    }    
-    $("input[name='add']").on("click",function () {
-        $("tbody").append("<tr><td></td><td><input name='options' type='text'/></td><td><input class='button1' type='button' value='確定'/></td><td><input class='button2' type='button' value='取消'/></td></tr>")
+﻿$(document).ready(function () {
+    var i = 1, options =new Array();
+    $('input[name="add"]').click(function () {
+        $('#AddModify').append('<tr><td></td><td><input name="option" type="text" ></td><td><input class="button1" name="confirm" type="button" value="確定"></td><td><input class="button2" name="cancel" type="button" value="取消"></td></tr>');
     })
-
-    $("form").submit(function () {
+    $(document).on('click', '.button1', function () {
+        i++
+        if (i%2 == 0){
+            $(this).attr({
+                name: 'edit',
+                value:'編輯'
+            });
+            $(this).parent().next().children().attr({
+                name: 'delete',
+                value: '刪除'
+            });            
+            $(this).parent().prev().children().attr('readonly', true);
+            $(this).parent().prev().children().css('border', 'none');
+        }else {
+            $(this).attr({
+                name: 'confirm',
+                value:'確定'
+            });
+            $(this).parent().next().children().attr({
+                name: 'cancel',
+                value: '取消'
+            });            
+            $(this).parent().prev().children().removeAttr('readonly');
+            $(this).parent().prev().children().css('border', '1px solid');
+        }
+    })
+    $(document).on('click', '.button2', function () {
+        i++
+        if (i%2 == 0){            
+            if ($('table>tbody').children().length <= 2) { $('#error').text("至少需要兩個選項");}
+            else {$(this).parent().parent().remove();}
+        }else {
+            $(this).attr({
+                name: 'delete',
+                value:'刪除'
+            });
+            $(this).parent().prev().children().attr({
+                name: 'edit',
+                value: '編輯'
+            });            
+            $(this).parent().prev().prev().children().removeAttr('readonly');
+            $(this).parent().prev().prev().children().css('border', '1px solid');
+        }
+    })
+    $('input[name="complete"]').click(function () {
+        $('input[name="option"]').each(function () { options.push($(this).val()) })
         $.ajax({
             url: 'create.php',
             type: 'POST',
             data: {
-                topic: topic,
-                options:JSON.stringify(options)
+                item:'vote',
+                topic: $('input[name="topic"]').val(),
+                options:options
             }
-        }).fail($("#error").text('新增投票失敗，請稍後再試'))
+        }).done(function (response) {
+            if (response == '新增成功') {
+                $('#list').append('<tr><td>', $('input[name="topic"]').val(), '</td><td>', options.length, '</td><td><button name="start">開始</button></td><td><button name="end">結束</button></td></tr>');
+                $('form').hide();
+            }else {$('#error').text('新增失敗，請稍後再試')}
+        }).fail(function () {$('#error').text('無法新增，請稍後再試')})
     })
+    
 })

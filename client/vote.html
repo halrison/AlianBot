@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <script src="member.js"></script>
+    <script src="votes.js"></script>
     <header>
         <nav>
             <ul>
@@ -31,7 +31,7 @@
     <main>
         <div id="error"></div>
         <form>
-            <table>
+            <table id="AddModify">
                 <thead>
                     <tr>
                         <th>主題</th>
@@ -42,12 +42,15 @@
                 <tbody>
                     <tr>
                         <td><input name="topic" type="text" /></td>
-                        <td><input name="options" type="text" /></td>
-                        <td colspan="2"><input type="submit" value="新增" /></td>
+                        <td><input name="option" type="text" /></td>
+                        <td><input class="button1" name="confirm" type="button" value="確定" /></td>
+                        <td><input class="button2" name="cancel" type="button" value="取消" /></td>
                     </tr>
                 </tbody>
             </table>
+            <input name="add" type="button" value="加入" /><input name="complete" type="button" value="完成">
         </form>
+        <table id="list"></table>
     </main>
     <footer> 2019 海力森製作</footer>
 </body>
