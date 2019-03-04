@@ -60,10 +60,9 @@ $(function () {
                 type: 'POST',
                 data: {
                     item: 'command',
-                    keyword: text1.val(),
-                    response: text2.val()
+                    id:$(this).parents('tr').find('td:first').text()
                 }
-            }).done($("tr")[i].remove());
+            }).done($(this).parents('tr').remove());
         });
         $("input[name='cancel']")[i].click(function () {
             text1.replaceWith(table[i].KeyWord).removeAttr('disabled');

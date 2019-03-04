@@ -4,34 +4,23 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <title></title>
+    <title>投票-艾莉安</title>
 </head>
 <body>
     <script src="votes.js"></script>
-    <header>
-        <nav>
-            <ul>
-                <li><a>Twitch狀態：未連線</a></li>
-                <li><a href="#" id="twitch">連線</a></li>
-                <li><a>Youtube狀態：未連線</a></li>
-                <li><a href="#" id="youtube">連線</a></li>
-                <li class="right"><a href="logout.php">登出</a></li>
-                <li class="right"><a id="nickname"></a></li>
-            </ul>
-        </nav>
-    </header>
     <aside>
         <ul>
             <li><a href="dashboard.html">儀表板</a></li>
             <li><a href="commands.html">指令</a></li>
             <li><a class="active">投票</a></li>
             <li><a href="requests.html">點播</a></li>
+            <li><a href="settings.html">設定</a></li>
         </ul>
     </aside>
     <main>
         <div id="error"></div>
         <form>
-            <table>
+            <table id="AddModify">
                 <thead>
                     <tr>
                         <th>主題</th>
@@ -50,7 +39,7 @@
             </table>
             <input name="add" type="button" value="新增" />
             <input type="submit" value="完成" />
-            
+            <table id="list"></table>
         </form>
     </main>
     <footer> 2019 海力森製作</footer>

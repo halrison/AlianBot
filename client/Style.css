@@ -3,16 +3,12 @@
     padding:0px;
     height:1000px;
 }
-nav{
-    height:45px;
-}
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    height:45px;
 }
 
 nav ul li {
@@ -27,19 +23,10 @@ nav ul li a {
         text-decoration: none;
     }
 
-        /* Change the link color to #111 (black) on hover */
 nav ul li a:hover {
             background-color: #111;
         }
-    #twitch:hover{
-        background-color:mediumpurple;
-    }
-    #youtube:hover{
-        background-color:red;
-    }
-   .right{
-       float:right;
-   }
+.right{float:right;}
 aside{
     width:171px;
     height:900px;

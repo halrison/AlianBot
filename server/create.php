@@ -20,7 +20,7 @@
 			$sql->bindParam(':username',$username_l);
 			$sql->bindParam(':keyword',$keyword);
 			$sql->bindParam(':response',$response);
-			if($sql->exec()){echo'成功';}
+			if($sql->execute()){echo'成功';}
 			else {echo'失敗';}
 			break;	
 		case 'vote':
@@ -28,7 +28,7 @@
 			$sql->bindParam(':username',$username_l);
 			$sql->bindParam(':topic',$topic);
 			$sql->bindParam(':options',json_encode($options));
-			if ($sql->exec()) {echo'成功';}
+			if ($sql->execute()) {echo'成功';}
 			else{echo'失敗';}
 			break;
 		case 'user':
@@ -36,7 +36,7 @@
 			$sql->bindParam(':username',$username_r);
 			$sql->bindParam(':nickname',$nickname);
 			$sql->bindParam(':password',$password);
-			if($sql->exec()){
+			if($sql->execute()){
 				$_SESSION['user']=$username_r;
 				echo'成功';
 			}else{echo'失敗';}			
@@ -45,7 +45,7 @@
 			$sql=$con->prepare('insert into Songs(OrderedBy,RequestTo,PlayStatus)values(:username,:url,"waiting")')	
 			$sql->bindParam(':username',$username_r);
 			$sql->bindParam(':url',$url);
-			if($sql->exec()){echo'成功';}
+			if($sql->execute()){echo'成功';}
 			else {echo'失敗';}
 	}
 	$con=null;
