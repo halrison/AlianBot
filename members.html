@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="Style.css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>        
+        <title>會員-艾莉安</title>
+    </head>
+    <body>
+        <script src="members.js"></script>
+        <nav><ul>
+            <li><a id="a_login" href="#">登入</a></li>
+            <li><a id="a_register" href="#">註冊</a></li>
+            <li class="right"><a id="return" href="index.html">回首頁</a></li>
+        </ul></nav>
+        <form>
+            <fieldset id="f_login">
+                使用者名稱：<input id="username_login" type="text" required/><br />
+                密碼：<input id="password_login" type="password" required/><br />
+                <input id="s_login" type="button" value="登入"/>
+            </fieldset>
+            <fieldset id="f_register">
+                使用者名稱：<input id="username_register" type="text" pattern="[0-9][A-Z][a-z]" title="只限英數字" required/><br />
+                暱稱：<input id="nickname" type="text" /><br />
+                密碼：<input id="password_register" type="password" pattern="[0-9][A-Z][a-z][!@#$%&*]" title="英數字或符號" required/><br />
+                確認密碼：<input id="confirm_register" type="password"/><br />
+                <input id="s_register" type="button" value="註冊" />
+            </fieldset>          
+            <fieldset id="f_reset">
+                使用者名稱：<input id="username_reset" type="text" required /><br />
+                新密碼：<input id="password_reset" type="password" pattern="[0-9][A-Z][a-z][!@#$%&*]" title="英數字或符號" required /><br />
+                確認密碼：<input id="confirm_reset" type="password" /><br />
+                <input id="s_reset" type="button" value="重設" />                                                                                                  
+            </fieldset>
+        </form>
+        <div id="error"></div>
+    </body>
+</html>
