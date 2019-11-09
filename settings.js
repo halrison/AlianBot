@@ -1,5 +1,5 @@
 $(function () {
-    var i=0
+    var i = 0
     $('#twitch_toggle').change(function () {
         if ($(this).is(':checked')) {
             $('#twitch_status').text('啟用-未連線');
@@ -21,9 +21,9 @@ $(function () {
     $(document).on('click', '#twitch_connect', function (event) {
         event.preventDefault();
         i++;
-        if (i % 2 == 0) {            
+        if (i % 2 == 0) {
             $(this).text('連線');
-            $('#twitch_status').text('啟用-未連線');            
+            $('#twitch_status').text('啟用-未連線');
         } else {
             $(this).text('斷線');
             $('#twitch_status').text('啟用-已連線()');
@@ -49,12 +49,16 @@ $(function () {
                 url: 'update.php',
                 method: 'POST',
                 data: {
-                    item:'user',
+                    item: 'user',
                     nickname: $("input[name='nickname']").val(),
                     username: $("input[name='username']").val(),
                     password: $("input[name='password']").val()
                 }
-            }).fail(function () { $('#error').text('變更設定失敗，請稍後再試'); })
-        } else { $('#error').text('密碼不符，請重新輸入');}
+            }).fail(function () {
+                $('#error').text('變更設定失敗，請稍後再試');
+            })
+        } else {
+            $('#error').text('密碼不符，請重新輸入');
+        }
     })
 })

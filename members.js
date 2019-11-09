@@ -2,7 +2,7 @@
     var error = '';
     var username;
     var password;
-    var confirm ;
+    var confirm;
     var nickname;
     $("#a_login").click(function () {
         $("#f_login").show();
@@ -36,12 +36,12 @@
                 if (data == '成功') {
                     location.href = 'dashboard.html';
                 } else if (data == '失敗') {
-                    error='帳號或密碼有誤，請稍後再試';
+                    error = '帳號或密碼有誤，請稍後再試';
                 }
             }).fail(function () {
-                error='無法登入，請稍後再試';
+                error = '無法登入，請稍後再試';
             });
-        }        
+        }
     })
     $("#s_register").click(function (event) {
         event.preventDefault();
@@ -55,7 +55,7 @@
         if (error == '') {
             $.ajax({
                 url: 'create.php',
-                type:'POST',
+                type: 'POST',
                 data: {
                     item: 'user',
                     username: username.val(),
@@ -63,10 +63,10 @@
                     password: password.val()
                 }
             }).done(function (data) {
-                if (data==='成功') {
+                if (data === '成功') {
                     location.href = 'dashboard.html';
-                }else if(data==='失敗') {
-                    error='註冊失敗，請稍後再試';
+                } else if (data === '失敗') {
+                    error = '註冊失敗，請稍後再試';
                 };
             }).fail(function () {
                 error = '無法註冊，請稍後再試'
@@ -84,17 +84,17 @@
         if (error == '') {
             $.ajax({
                 url: 'update.php',
-                type:'POST',
+                type: 'POST',
                 data: {
                     item: 'user',
                     username: username.val(),
                     password: password.val()
                 }
             }).done(function (data) {
-                if (data=='成功') {
+                if (data == '成功') {
                     location.href = 'dashboard.html';
-                }else if(data=='失敗') {
-                    error='變更密碼失敗，請稍後再試';
+                } else if (data == '失敗') {
+                    error = '變更密碼失敗，請稍後再試';
                 };
             }).fail(function () {
                 error = '無法變更密碼，請稍後再試'

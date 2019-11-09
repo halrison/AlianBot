@@ -18,4 +18,3 @@
 		$sql->execute($user);
 	}
 	$con=null;
-?>

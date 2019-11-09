@@ -4,11 +4,13 @@ $(function () {
         $.ajax({
             url: 'search.php',
             type: 'POST',
-            data: {item:'request'}
+            data: {
+                item: 'request'
+            }
         }).done(function (result) {
             var table = JSON.parse(result);
             for (var i = 1; i <= table.length; i++) {
-                $("tbody").wrapInner('<tr><td></td><td></td><td></td><td><button type="button" name="play" value="¼½©ñ"></td><td><button type="button" name="delete" value="§R°£"></td></tr>');
+                $("tbody").wrapInner('<tr><td></td><td></td><td></td><td><button type="button" name="play" value="ï¿½ï¿½ï¿½ï¿½"></td><td><button type="button" name="delete" value="ï¿½Rï¿½ï¿½"></td></tr>');
                 $("tr:eq(i)>td:first").text(table[i].id);
                 $("tr:eq(i)>td:eq(2)").text(table[i].OrderedBy);
                 $("tr:eq(i)>td:eq(3)").text(table[i].RequestTo);
@@ -24,20 +26,20 @@ $(function () {
                     }).done(function (result2) {
                         var row = JSON.parse(result2);
                         $("tr:eq(i)>td:eq(4)").empty().text(table[i].PlayStatus);
-                    }).fail(error = '¼½©ñ¥¢±Ñ¡A½Ðµy«á¦A¸Õ');
+                    }).fail(error = 'ï¿½ï¿½ï¿½ñ¥¢±Ñ¡Aï¿½Ðµyï¿½ï¿½Aï¿½ï¿½');
                 });
                 $("button[name='delete']")[i].click(function () {
                     $.ajax({
-                        url: 'delete.php',
-                        type: 'POST',
-                        data: {
-                            item: 'request',
-                            id: $("tr:eq(i)>td:first").text()
-                        }
-                    }).done($("tr:eq(i)").remove())
-                    .fail(error = '§R°£ºq¦±¥¢±Ñ¡A½Ðµy«á¦A¸Õ');
+                            url: 'delete.php',
+                            type: 'POST',
+                            data: {
+                                item: 'request',
+                                id: $("tr:eq(i)>td:first").text()
+                            }
+                        }).done($("tr:eq(i)").remove())
+                        .fail(error = 'ï¿½Rï¿½ï¿½ï¿½qï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡Aï¿½Ðµyï¿½ï¿½Aï¿½ï¿½');
                 })
-            }          
+            }
         })
     })
     $("#error").text(error);

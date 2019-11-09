@@ -7,13 +7,15 @@ $(function () {
         $.ajax({
             url: 'search.php',
             type: 'POST',
-            data: { item: 'command' }
+            data: {
+                item: 'command'
+            }
         }).done(function (result) {
             table = JSON.parse(result);
         });
     });
     for (var i = 2; i <= table.length; i++) {
-        $("tr:last").append('<tr><td>'+table[i].id+'</td><td>' + table[i].KeyWord + '</td><td>' + table[i].Response + '</td><td><input type="button" name="edit" value="­×§ï"/></td><td><input type="button" name="delete" value="§R°£"/></td></tr >');
+        $("tr:last").append('<tr><td>' + table[i].id + '</td><td>' + table[i].KeyWord + '</td><td>' + table[i].Response + '</td><td><input type="button" name="edit" value="ä¿®æ”¹"/></td><td><input type="button" name="delete" value="åˆªé™¤"/></td></tr >');
         var text1 = $("tr:eq(i)>td:eq(2)");
         var text2 = $("tr:eq(i)>td:eq(3)");
         var button1 = $("tr:eq(i)>td:eq(4)");
@@ -24,16 +26,16 @@ $(function () {
             text1.val() = table[i].KeyWord;
             text2.val() = table[i].Response;
             $(this).attr('name', 'send');
-            $(this).attr('value', '°e¥X');
+            $(this).attr('value', 'é€å‡º');
             button2.attr('name', 'cancel');
-            button2.attr('value', '¨ú®ø');
+            button2.attr('value', 'å–æ¶ˆ');
         });
         $("input[name='send']")[i].click(function () {
             if (text1.val() == '') {
-                error = 'ÃöÁä¦r¬O¥²¶ñÄæ¦ì';
+                error = 'é—œéµå­—æ˜¯å¿…å¡«æ¬„ä½';
             }
             if (text2.val() == '') {
-                error &= '\n¦^À³¬O¥²¶ñÄæ¦ì';
+                error &= '\nå›æ‡‰æ˜¯å¿…å¡«æ¬„ä½';
             }
             if (error == '') {
                 $.ajax({
@@ -48,10 +50,10 @@ $(function () {
                     text1.replaceWith(result2.KeyWord).removeAttr('disabled');
                     text2.replaceWith(result2.Response);
                     $(this).attr('name', 'edit');
-                    $(this).attr('value', '­×§ï');
+                    $(this).attr('value', 'ä¿®æ”¹');
                     button2.attr('name', 'delete');
-                    button2.attr('value', '§R°£');
-                }).fail(error = '§ó§ï¦^À³¥¢±Ñ¡A½Ğµy«á¦A¸Õ');
+                    button2.attr('value', 'åˆªé™¤');
+                }).fail(error = 'æ›´æ”¹å›æ‡‰å¤±æ•—ï¼Œè«‹ç¨å¾Œå†è©¦');
             }
         });
         $("input[name='delete']")[i].click(function () {
@@ -60,7 +62,7 @@ $(function () {
                 type: 'POST',
                 data: {
                     item: 'command',
-                    id:$(this).parents('tr').find('td:first').text()
+                    id: $(this).parents('tr').find('td:first').text()
                 }
             }).done($(this).parents('tr').remove());
         });
@@ -68,18 +70,18 @@ $(function () {
             text1.replaceWith(table[i].KeyWord).removeAttr('disabled');
             text2.replaceWith(table[i].Response);
             button1.attr('name', 'edit');
-            button1.attr('value', '­×§ï');
+            button1.attr('value', 'ä¿®æ”¹');
             $(this).attr('name', 'delete');
-            $(this).attr('value', '§R°£');
+            $(this).attr('value', 'åˆªé™¤');
         });
     }
     $("form").submit(function (event) {
         event.preventDefault();
         if (keyword.val() == '') {
-            error = 'ÃöÁä¦r¬O¥²¶ñÄæ¦ì';
+            error = 'é—œéµå­—æ˜¯å¿…å¡«æ¬„ä½';
         }
         if (response.val() == '') {
-            error &= '\n¦^À³¬O¥²¶ñÄæ¦ì';
+            error &= '\nå›æ‡‰æ˜¯å¿…å¡«æ¬„ä½';
         }
         if (error == '') {
             $.ajax({
@@ -90,9 +92,10 @@ $(function () {
                     keyword: keyword.val(),
                     response: response.val()
                 }
-            }).done($("table").ready()
-             ).fail(error = 'µLªk·s¼W©R¥O¡A½Ğµy«á¦A¸Õ');
-        } else { error = '·s¼W©R¥O¥¢±Ñ¡A½Ğµy«á¦A¸Õ'; }
-    });    
+            }).done($("table").ready()).fail(error = 'ç„¡æ³•æ–°å¢å‘½ä»¤ï¼Œè«‹ç¨å¾Œå†è©¦');
+        } else {
+            error = 'æ–°å¢å‘½ä»¤å¤±æ•—ï¼Œè«‹ç¨å¾Œå†è©¦';
+        }
+    });
     $("#error").text(error);
 })
