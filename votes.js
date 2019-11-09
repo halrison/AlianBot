@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
     var i = 1,
         options = new Array();
     $('input[name="add"]').click(function () {
