@@ -1,7 +1,7 @@
 <?php
 session_start();
 $item = $_REQUEST['item'];
-$con = new PDO("myslq:host=localhost,db=alianbot", "halrison", "10240102Nal");
+$con = new PDO("mysql:host=localhost;db=alianbot", "halrison", "10240102Nal");
 switch ($item) {
 	case 'user':
 		$username_l = $_REQUEST['username'];
@@ -16,8 +16,4 @@ switch ($item) {
 		} else {
 			echo '失敗';
 		}
-		break;
-	default:
-		# code...
-		break;
 }
