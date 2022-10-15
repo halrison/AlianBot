@@ -34,8 +34,7 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "frontend2", "..\..\JavaScri
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "frontend3", "..\..\TypeScript\frontend3\frontend3.njsproj", "{A915E69F-68F2-4929-9561-573AA57C62E3}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebJob", "WebJob\WebJob.vbproj", "{8F9A95CC-AA9B-4BC3-882F-96D6EBFAC432}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
