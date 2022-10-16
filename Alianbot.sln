@@ -3,36 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "backend1(1)", "..\..\Visual Web Developer\backend1\", "{8D3D80C2-433A-4B50-AC41-43649A179437}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
-		Debug.AspNetCompiler.VirtualPath = "/backend1"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\Visual Web Developer\backend1\"
-		Debug.AspNetCompiler.TargetPath = "..\..\..\..\Code Snippets\Visual Web Developer\My Code Snippets\backend1\"
-		Debug.AspNetCompiler.Updateable = "false"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/backend1"
-		Release.AspNetCompiler.PhysicalPath = "..\..\Visual Web Developer\backend1\"
-		Release.AspNetCompiler.TargetPath = "..\..\..\..\Code Snippets\Visual Web Developer\My Code Snippets\backend1\"
-		Release.AspNetCompiler.Updateable = "false"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "58454"
-		SlnRelativePath = "..\..\Visual Web Developer\backend1\"
-	EndProjectSection
-EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "frontend1", "..\..\JavaScript\frontend1\frontend1.njsproj", "{A19B22DB-A447-4E79-81FF-352F6C3AEECF}"
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "backend2", "..\..\Python\backend2\backend2.pyproj", "{7782B6CD-5F1A-40F7-B127-412618A7B0D1}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "backend3", "..\..\Visual Basic\backend3\backend3.vbproj", "{9EA8EA36-22A1-4351-9E9A-575F330C2A5E}"
-EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "frontend2", "..\..\JavaScript\frontend2\frontend2.njsproj", "{D73CC330-CD3B-4A1F-A171-510B42CC4D36}"
-EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "frontend3", "..\..\TypeScript\frontend3\frontend3.njsproj", "{A915E69F-68F2-4929-9561-573AA57C62E3}"
+
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "backend3", "backend3.vbproj", "{9EA8EA36-22A1-4351-9E9A-575F330C2A5E}"
 EndProject
 
 Global
