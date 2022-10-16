@@ -12,9 +12,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - uses: actions/checkout@v2
@@ -26,27 +23,35 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
 
       - name: Restore NuGet packages
-        uses: IT-Service/restore-nuget-packages@v1
-      - name: Install Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 17.3
-      - name: install dependency
-        run: |
-          cd Scripts
-          npm install -g @angular/cli
-          npm install
-          npm run build
+        run: nuget restore
+
       - name: Publish to folder
-        run: msbuild Alianbot.sln /nologo /verbosity:m /t:backend3 /p:OutDir="obj/Release"
-      - uses: azure/login@v1
+        run: msbuild /nologo /verbosity:m /t:Build /t:backend3 /p:_PackageTempDir="\published\"
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
         with:
-          creds: ${{secrets.CRENDENTIALS}}
+          name: ASP-app
+          path: '/published/**'
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: ASP-app
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'alianbot0'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C79239316A6400CAE7E464BA6F0B092 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_27529369AD0E478D8D1552287A681E4F }}
           package: .
