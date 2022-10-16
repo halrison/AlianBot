@@ -24,10 +24,18 @@ jobs:
 
       - name: Restore NuGet packages
         uses: IT-Service/restore-nuget-packages@v1
-
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17.3
+      - name: install dependency
+        run: |
+          cd Scripts
+          npm install -g @angular/cli
+          npm install
+          npm run build
       - name: Publish to folder
         run: msbuild Alianbot.sln /nologo /verbosity:m /t:backend3 /p:_PackageTempDir="\published\"
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
