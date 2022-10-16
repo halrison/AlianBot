@@ -35,12 +35,12 @@ jobs:
           npm install
           npm run build
       - name: Publish to folder
-        run: msbuild Alianbot.sln /nologo /verbosity:m /t:backend3 /p:_PackageTempDir="\published\"
+        run: msbuild Alianbot.sln /nologo /verbosity:m /t:backend3 /p:OutDir="obj/Release"
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: ASP-app
-          path: '/published/**'
+          path: 'obj/Release'
 
   deploy:
     runs-on: windows-latest
