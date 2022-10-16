@@ -39,7 +39,9 @@ jobs:
           npm run build
       - name: Publish to folder
         run: msbuild Alianbot.sln /nologo /verbosity:m /t:backend3 /p:OutDir="obj/Release"
-      
+      - uses: azure/login@v1
+        with:
+          creds: ${{secrets.CRENDENTIALS}}
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
