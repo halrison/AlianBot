@@ -66,10 +66,10 @@
               "baseHref": "/",
               "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": false,
-              "namedChunks": false
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
