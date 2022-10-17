@@ -70,16 +70,6 @@
               "extractLicenses": false,
               "sourceMap": false,
               "namedChunks": false
-            },
-            "deployment:"{
-              "outputPath": "../Views",
-              "baseHref": "/",
-              "buildOptimizer": true,
-              "optimization": true,
-              "vendorChunk": true,
-              "extractLicenses": true,
-              "sourceMap": true,
-              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
