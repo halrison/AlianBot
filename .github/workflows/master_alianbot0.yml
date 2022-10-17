@@ -6,8 +6,6 @@ on:
       - master
   workflow_dispatch:
 name: Build and deploy ASP app to Azure Web App - alianbot0
-
-
 jobs:
   build:
     runs-on: windows-latest
@@ -16,25 +14,31 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
       - uses: actions/checkout@v2
-
       - name: Setup MSBuild path
         uses: microsoft/setup-msbuild@v1.0.2
-
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.0.5
-
       - name: Restore NuGet packages
         run: nuget restore
-
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+        with:
+          # Set always-auth in npmrc.
+          always-auth: false
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 16          
+          # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
+          architecture: x64
+          # Set this option if you want the action to check for the latest available version that satisfies the version spec.
+          check-latest: true
+      - name: Build Frontend Files
+        run: |
+          cd Scripts
+          npm i -g @angular/cli  
+          npm i
+          npm run publish
       - name: Publish to folder
         run: msbuild Alianbot.sln /nologo /verbosity:m /t:backend3 /p:_PackageTempDir="\published\"
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: ASP-app
-          path: '/published/**'
-
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
