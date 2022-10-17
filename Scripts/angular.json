@@ -80,6 +80,7 @@
               "extractLicenses": true,
               "sourceMap": true,
               "namedChunks": true
+            }
           },
           "defaultConfiguration": "production"
         },
