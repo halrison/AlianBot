@@ -6,98 +6,14 @@ on:
       - master
   workflow_dispatch:
 name: Build and deploy ASP app to Azure Web App - alianbot0
-variables:
-- name: BuildParameters.solution
-  value: '**\*.sln'
-trigger:
-  branches:
-    include:
-    - master
 
-resources:
-  repositories:
-  - repository: self
-    type: git
-    ref: master
+
 jobs:
-  Build:
-    runs-on: windows-latest
-  steps:
-  - checkout: self
-    clean: true
-    fetchTags: false
-  - task: NuGetToolInstaller@0
-    displayName: Use NuGet 4.4.1
-    inputs:
-      versionSpec: 4.4.1
-  - task: NuGetCommand@2
-    displayName: NuGet restore
-    inputs:
-      solution: $(BuildParameters.solution)
-  - task: NodeTool@0
-    displayName: Use Node 16.x
-    inputs:
-      versionSpec: 16.x
-      checkLatest: true
-  - task: CmdLine@2
-    displayName: Command Line Script
-    inputs:
-      script: cd Scripts
-  - task: Npm@1
-    displayName: npm install
-    inputs:
-      verbose: false
-  - task: Npm@1
-    displayName: npm publish
-    inputs:
-      command: publish
-      workingDir: Scripts
-      verbose: false
-      publishRegistry: useFeed
-      publishFeed: a8c911f8-9edc-46ac-8909-315085f9b1f7
-  - task: VSBuild@1
-    displayName: Build solution **\*.sln
-    inputs:
-      msbuildArgs: /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:publishUrl="$(Agent.TempDirectory)\WebAppContent\\" /p:OutDir=$(Build.ArtifactStagingDirectory)
-      platform: $(BuildPlatform)
-      configuration: $(BuildConfiguration)
-      msbuildArchitecture: x64
-  - task: ArchiveFiles@2
-    displayName: Archive $(Build.BinariesDirectory)
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: drop'
-    inputs:
-      PathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-  Deploy:
-    needs: Build
-    runs-on: windows-latest
-    steps:
-    - checkout: self
-      clean: true
-      fetchTags: false
-    - task: DownloadBuildArtifacts@1
-      displayName: Download Build Artifacts
-      inputs:
-        artifactName: drop
-        itemPattern: '**.zip'
-    - task: AzureWebApp@1
-      displayName: 'Azure Web App Deploy: alianbot0'
-      inputs:
-        azureSubscription: f39a08ce-7d3d-477c-9cc5-9d8f313ea5be
-        appType: webApp
-        appName: alianbot0
-        deployToSlotOrASE: true
-        resourceGroupName: Alianbot
-        package: $(System.ArtifactsDirectory)
-        deploymentMethod: zipDeploy
-...
-
-
-
-#jobs:
   build:
     runs-on: windows-latest
-
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
       - uses: actions/checkout@v2
 
@@ -118,19 +34,6 @@ jobs:
         with:
           name: ASP-app
           path: '/published/**'
-
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: ASP-app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
