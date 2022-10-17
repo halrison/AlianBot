@@ -20,11 +20,8 @@ resources:
     type: git
     ref: master
 jobs:
-- job: Job_1
-  displayName: Build
-  condition: succeededOrFailed()
-  pool:
-    vmImage: windows-latest
+  Build:
+    runs-on: windows-latest
   steps:
   - checkout: self
     clean: true
@@ -71,30 +68,28 @@ jobs:
     displayName: 'Publish Artifact: drop'
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-- job: Job_2
-  displayName: Deploy
-  dependsOn: Job_1
-  pool:
-    vmImage: windows-latest
-  steps:
-  - checkout: self
-    clean: true
-    fetchTags: false
-  - task: DownloadBuildArtifacts@1
-    displayName: Download Build Artifacts
-    inputs:
-      artifactName: drop
-      itemPattern: '**.zip'
-  - task: AzureWebApp@1
-    displayName: 'Azure Web App Deploy: alianbot0'
-    inputs:
-      azureSubscription: f39a08ce-7d3d-477c-9cc5-9d8f313ea5be
-      appType: webApp
-      appName: alianbot0
-      deployToSlotOrASE: true
-      resourceGroupName: Alianbot
-      package: $(System.ArtifactsDirectory)
-      deploymentMethod: zipDeploy
+  Deploy:
+    needs: Build
+    runs-on: windows-latest
+    steps:
+    - checkout: self
+      clean: true
+      fetchTags: false
+    - task: DownloadBuildArtifacts@1
+      displayName: Download Build Artifacts
+      inputs:
+        artifactName: drop
+        itemPattern: '**.zip'
+    - task: AzureWebApp@1
+      displayName: 'Azure Web App Deploy: alianbot0'
+      inputs:
+        azureSubscription: f39a08ce-7d3d-477c-9cc5-9d8f313ea5be
+        appType: webApp
+        appName: alianbot0
+        deployToSlotOrASE: true
+        resourceGroupName: Alianbot
+        package: $(System.ArtifactsDirectory)
+        deploymentMethod: zipDeploy
 ...
 
 
