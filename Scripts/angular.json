@@ -66,11 +66,20 @@
               "baseHref": "/",
               "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
+              "vendorChunk": false,
               "extractLicenses": false,
+              "sourceMap": false,
+              "namedChunks": false
+            },
+            "deployment:"{
+              "outputPath": "../Views",
+              "baseHref": "/",
+              "buildOptimizer": true,
+              "optimization": true,
+              "vendorChunk": true,
+              "extractLicenses": true,
               "sourceMap": true,
-              "namedChunks": true
-            }
+              "namedChunks": true}
           },
           "defaultConfiguration": "production"
         },
