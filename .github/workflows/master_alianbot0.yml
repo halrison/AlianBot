@@ -38,7 +38,7 @@ jobs:
           npm i
           npm run build
       - name: Publish to folder
-        run: msbuild Alianbot.sln /nologo /verbosity:m /t:Clean;Build /p:_PackageTempDir="\published\"
+        run: msbuild Alianbot.sln /nologo /verbosity:m /t:Rebuild /p:_PackageTempDir="\published\"
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
