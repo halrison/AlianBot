@@ -44,25 +44,7 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript:                     
-            Import-Module PSFTP
-            $username = "alianbot\$alianbot0"
-            $password = ConvertTo-SecureString "4gWNp4Jaq1wqfB32YkbSeKSwiKTSYiqocSP0h1ClEPjWxNg5P0DyigWQief0" -AsPlainText -Force
-            $cred = new-object -typename System.Management.Automation.PSCredential `
-                     -argumentlist $username, $password
-            $ftpserver = "ftps://waws-prod-hk1-011.ftp.azurewebsites.windows.net/site/wwwroot"
-            $folderToDelete = "/site/wwwroot/*"
-            Set-FTPConnection -Credentials $cred -Server $ftpserver -Session MyFTPSession -UsePassive 
-            $Session = Get-FTPConnection -Session MyFTPSession
-            Try
-            {
-                Remove-FTPItem -Session $Session -Path $folderToDelete -Recurse 
-            }
-            Catch
-            {
-                Write-Warning "There was an error while trying to remove the folder:"
-                Write-Warning $_.Exception.Message
-                Write-Warning $_.Exception.ItemName
-            } 
+            Remove-Item –path D:\home\site\wwwroot\ –recurse
           # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
           azPSVersion: latest
       - name: Deploy to Azure Web App
