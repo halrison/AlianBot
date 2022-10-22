@@ -50,7 +50,7 @@ jobs:
             $password = $publishingProfile.publishData.publishProfile[0].userPWD
             $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
             $bodyToPOST = @{  
-                              command = "find . -mindepth 1 -delete",
+                              command = "find . -mindepth 1 -delete"
                               dir = "D:/home/site/wwwroot"  
             }
             $param = @{  
