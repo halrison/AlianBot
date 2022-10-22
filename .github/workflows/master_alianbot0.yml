@@ -38,15 +38,7 @@ jobs:
           npm i
           npm run publish
       - name: Publish to folder
-        run: msbuild Alianbot.sln /verbosity:d /t:Clean,Build /p:_PackageTempDir="\published\"
-      - name: Azure PowerShell Action
-        uses: Azure/powershell@v1
-        with:
-          # Specify the Az PowerShell script here.
-          inlineScript:                     
-            Remove-Item –path D:\home\site\wwwroot\ –recurse
-          # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
-          azPSVersion: latest
+        run: msbuild Alianbot.sln /verbosity:d /t:Clean,Build /p:_PackageTempDir="\published\"      
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
