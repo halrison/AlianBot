@@ -44,8 +44,8 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript:                     
-            Import-Module PSFTP 
-            $username = alianbot\$alianbot0
+            Import-Module PSFTP
+            $username = "alianbot\$alianbot0"
             $password = ConvertTo-SecureString "4gWNp4Jaq1wqfB32YkbSeKSwiKTSYiqocSP0h1ClEPjWxNg5P0DyigWQief0" -AsPlainText -Force
             $cred = new-object -typename System.Management.Automation.PSCredential `
                      -argumentlist $username, $password
