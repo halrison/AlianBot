@@ -49,10 +49,7 @@ jobs:
             $username = $publishingProfile.publishData.publishProfile[0].userName
             $password = $publishingProfile.publishData.publishProfile[0].userPWD
             $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
-            $bodyToPOST = @{  
-                              command = "find . -mindepth 1 -delete"
-                              dir = "D:/home/site/wwwroot"  
-            }
+            
             $param = @{  
                         Uri = "https://alianbot0.scm.azurewebsites.net/api/vfs/site/wwwroot/*.*"  
                         Headers = @{Authorization=("Basic {0}" -f $base64AuthInfo)}  
