@@ -45,17 +45,20 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
+- task: DeleteFiles@1
+  inputs:
+    SourceFolder: 
+    Contents: '*'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure for Developer (0c48c8b5-2e40-485c-b15b-1189e80d2983)'
+    azureSubscription: 'Azure for Developer(3)(0c48c8b5-2e40-485c-b15b-1189e80d2983)'
     appType: 'webApp'
     WebAppName: 'alianbot0'
     deployToSlotOrASE: true
     ResourceGroupName: 'Alianbot'
     SlotName: 'production'
-    packageForLinux: '$(build.artifactStagingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     enableCustomDeployment: true
     DeploymentType: 'zipDeploy'
-
 
