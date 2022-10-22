@@ -8,7 +8,7 @@
     "serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "publish":"ng build --output-path ../Views"
+    "publish":"ng build -c deployment"
   },
   "private": true,
   "dependencies": {
