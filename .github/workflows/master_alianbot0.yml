@@ -54,11 +54,9 @@ jobs:
                               dir = "D:/home/site/wwwroot"  
             }
             $param = @{  
-                        Uri = "https://alianbot0.scm.azurewebsites.net/api/command"  
+                        Uri = "https://alianbot0.scm.azurewebsites.net/api/vfs/site/wwwroot/*.*"  
                         Headers = @{Authorization=("Basic {0}" -f $base64AuthInfo)}  
-                        Method = "POST"  
-                        Body = (ConvertTo-Json $bodyToPOST)  
-                        ContentType = "application/json"  
+                        Method = "DELETE
             }  
             Invoke-RestMethod @param  
           # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
