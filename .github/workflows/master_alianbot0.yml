@@ -39,6 +39,32 @@ jobs:
           npm run publish
       - name: Publish to folder
         run: msbuild Alianbot.sln /verbosity:d /t:Clean,Build /p:_PackageTempDir="\published\"
+      - name: Azure PowerShell Action
+        uses: Azure/powershell@v1
+        with:
+          # Specify the Az PowerShell script here.
+          inlineScript: 
+            $ResGroupName = "Alianbot"
+            $WebAppName = "alianbot0"            
+            $WebApp = Get-AzWebApp -Name $WebAppName -ResourceGroupName $ResGroupName
+            [xml]$publishingProfile = Get-AzWebAppPublishingProfile -WebApp $WebApp
+            $username = $publishingProfile.publishData.publishProfile[0].userName
+            $password = $publishingProfile.publishData.publishProfile[0].userPWD
+            $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
+            $bodyToPOST = @{  
+                              command = "find . -mindepth 1 -delete"  
+                              dir = "/home/site/wwwroot"  
+            }
+            $param = @{  
+                        Uri = "https://$WebAppName.scm.azurewebsites.net/api/command"  
+                        Headers = @{Authorization=("Basic {0}" -f $base64AuthInfo)}  
+                        Method = "POST"  
+                        Body = (ConvertTo-Json $bodyToPOST)  
+                        ContentType = "application/json"  
+            }  
+            Invoke-RestMethod @param  
+          # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
+          azPSVersion: latest
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
