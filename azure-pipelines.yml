@@ -28,7 +28,7 @@ steps:
 - task: AzureStaticWebApp@0
   name: 'Deploy_Frontend_WebSite'
   env:
-    deploy_token: $(Deploy Token)
+    deploy_token: '$(Deploy Token)'
   inputs:
     app_location: './Scripts/dist/frontend3'
     skip_app_build: true
