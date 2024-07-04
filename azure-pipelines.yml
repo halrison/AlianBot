@@ -8,24 +8,27 @@ pool:
   vmImage: 'ubuntu-latest'
 steps:
 - task: NodeTool@0
+  name: 'Install_Nodejs'
   inputs:
     versionSource: 'spec'
     versionSpec: '>=22.0.0'
     checkLatest: true
 - task: Npm@1
+  name: 'Install_Frontend_Dependencies'
   inputs:
     command: 'custom'
     workingDir: './Scripts'
     customCommand: 'install'    
 - task: Npm@1
+  name: 'Build_Frontend_WebSite'
   inputs:
     command: 'custom'
     workingDir: './Scripts'
     customCommand: 'run build'
 - task: AzureStaticWebApp@0
+  name: 'Deply_frontend_webSite'
   inputs:
-    app_location: './Scripts'
-    output_location: './Scripts/dist/frontend3'
-    skip_app_build: true
+    app_location: './Scripts/dist/frontend3'
     skip_api_build: true
+    is_static_export: true
     azure_static_web_apps_api_token: '7512473fe40c61445aac4cebda7e4c7f7de0d309cc8a0e0fde925c1c13e0086a5-57c7f44a-61aa-401c-9640-a7be4554571801e162889'
