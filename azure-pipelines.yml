@@ -39,4 +39,10 @@ steps:
     azureSubscription: 'Azure for Developer(0c48c8b5-2e40-485c-b15b-1189e80d2983)'
     appType: 'webApp'
     WebAppName: 'alianbot1'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+- task: AzureStaticWebApp@0
+  inputs:
+        app_location: 'Scripts'
+        app_build_command: 'npm run build'
+        output_location: 'dist'
+        skip_api_build: true
