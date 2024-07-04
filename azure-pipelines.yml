@@ -14,9 +14,9 @@ steps:
     checkLatest: true
 - task: Npm@1
   inputs:
-    command: 'install'
+    command: 'custom'
     workingDir: './Scripts'
-    verbose: true
+    customCommand: 'install'
     customRegistry: 'useFeed'
     customFeed: 'a8c911f8-9edc-46ac-8909-315085f9b1f7'
 - task: AzureStaticWebApp@0
