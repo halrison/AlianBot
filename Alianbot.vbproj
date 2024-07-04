@@ -256,47 +256,10 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <Content Include="Scripts\.angular\cache\18.0.2\frontend3\.tsbuildinfo" />
-    <Content Include="Scripts\.angular\cache\18.0.2\frontend3\angular-compiler.db" />
-    <Content Include="Scripts\.angular\cache\18.0.2\frontend3\angular-compiler.db-lock" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\%40angular_core.js.map" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\%40angular_platform-browser.js.map" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\%40angular_router.js.map" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\chunk-DIKTDJPS.js.map" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\chunk-NKWK6WG7.js.map" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\package.json" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\_metadata.json" />
-    <Content Include="Scripts\.editorconfig" />
-    <Content Include="Scripts\.vscode\extensions.json" />
-    <Content Include="Scripts\.vscode\launch.json" />
-    <Content Include="Scripts\.vscode\tasks.json" />
-    <Content Include="Scripts\angular.json" />
-    <Content Include="Scripts\package-lock.json" />
-    <Content Include="Scripts\package.json" />
-    <None Include="Scripts\Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\src\app\app.component.scss" />
-    <Content Include="Scripts\src\app\home\home.component.scss" />
-    <Content Include="Scripts\src\assets\.gitkeep" />
-    <Content Include="Scripts\src\styles.scss" />
-    <Content Include="Scripts\tsconfig.app.json" />
-    <Content Include="Scripts\tsconfig.json" />
-    <Content Include="Scripts\tsconfig.spec.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\%40angular_core.js" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\%40angular_platform-browser.js" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\%40angular_router.js" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\chunk-DIKTDJPS.js" />
-    <Content Include="Scripts\.angular\cache\18.0.2\vite\deps\chunk-NKWK6WG7.js" />
-    <Content Include="Scripts\Properties\PublishProfiles\FolderProfile.pubxml.user" />
-    <Content Include="Scripts\public\favicon.ico" />
-    <Content Include="Scripts\src\app\app.component.html" />
-    <Content Include="Scripts\src\app\home\home.component.html" />
-    <Content Include="Scripts\src\favicon.ico" />
-    <Content Include="Scripts\src\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -316,17 +279,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\app.component.spec.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\app.component.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\app.config.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\app.module.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\app.routes.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\home\home.component.spec.ts" />
-    <TypeScriptCompile Include="Scripts\src\app\home\home.component.ts" />
-    <TypeScriptCompile Include="Scripts\src\main.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
