@@ -21,7 +21,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: './Scripts'
-    customCommand: 'build'
+    customCommand: 'run build'
 - task: AzureStaticWebApp@0
   inputs:
     app_location: './Scripts'
