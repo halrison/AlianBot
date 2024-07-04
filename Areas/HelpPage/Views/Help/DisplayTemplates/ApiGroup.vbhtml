@@ -1,7 +1,7 @@
 @Imports System.Web.Http
 @Imports System.Web.Http.Controllers
 @Imports System.Web.Http.Description
-@Imports backend3.Areas.HelpPage
+@Imports Alianbot.Areas.HelpPage
 @ModelType IGrouping(Of HttpControllerDescriptor, ApiDescription)
 
 @Code

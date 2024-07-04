@@ -2,7 +2,7 @@ Imports System.Collections.Generic
 Imports System.Collections.ObjectModel
 Imports System.Net.Http.Headers
 Imports System.Web.Http.Description
-Imports backend3.Areas.HelpPage.ModelDescriptions
+Imports Alianbot.Areas.HelpPage.ModelDescriptions
 
 Namespace Areas.HelpPage.Models
     ''' <summary>

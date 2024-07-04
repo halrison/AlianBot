@@ -1,7 +1,7 @@
 @Imports System.Collections.ObjectModel
 @Imports System.Web.Http.Description
 @Imports System.Threading
-@Imports backend3.Areas.HelpPage.ModelDescriptions
+@Imports Alianbot.Areas.HelpPage.ModelDescriptions
 @ModelType IList(Of ParameterDescription)
 
 @If Model.Count > 0 Then

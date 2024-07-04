@@ -7,11 +7,11 @@ Imports System.Runtime.InteropServices
 ' 資訊。
 
 ' 檢閱組件屬性的值
-<Assembly: AssemblyTitle("backend3")>
+<Assembly: AssemblyTitle("Alianbot")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("backend3")>
-<Assembly: AssemblyCopyright("Copyright (C)  2022")>
+<Assembly: AssemblyProduct("Alianbot")>
+<Assembly: AssemblyCopyright("Copyright (C)  2024")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

@@ -1,20 +1,43 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
-      "type": "pwa-chrome",
+      "name": "localhost (Edge)",
+      "type": "edge",
       "request": "launch",
-      "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/public"
     },
     {
-      "name": "ng test",
+      "name": "localhost (Chrome)",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: test",
-      "url": "http://localhost:9876/debug.html"
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/public"
+    },
+    {
+      "name": "Debug node process",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+      "skipFiles": [
+        "<node_internals/**"
+      ],
+      "stopOnEntry": true,
+      "console": "externalTerminal",
+      "env": {
+        "port": "4200"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch Node and Browser",
+      "configurations": [
+        "Debug node process",
+        "localhost (Chrome)"
+      ]
     }
   ]
 }

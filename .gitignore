@@ -1,9 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+
 # Compiled output
 /dist
 /tmp
 /out-tsc
 /bazel-out
+
 # Node
 /node_modules
 npm-debug.log
@@ -17,8 +19,6 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-*.njsproj
-*.njsproj.user
 
 # Visual Studio Code
 .vscode/*
@@ -36,6 +36,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+*.config
 
 # System files
 .DS_Store

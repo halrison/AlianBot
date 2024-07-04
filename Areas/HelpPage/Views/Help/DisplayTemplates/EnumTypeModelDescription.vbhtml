@@ -1,4 +1,4 @@
-@Imports backend3.Areas.HelpPage.ModelDescriptions
+@Imports Alianbot.Areas.HelpPage.ModelDescriptions
 @ModelType EnumTypeModelDescription
 
 <p>Possible enumeration values:</p>
