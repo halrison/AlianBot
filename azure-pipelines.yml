@@ -16,11 +16,16 @@ steps:
   inputs:
     command: 'custom'
     workingDir: './Scripts'
-    customCommand: 'install'
+    customCommand: 'install'    
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: './Scripts'
+    customCommand: 'build'
 - task: AzureStaticWebApp@0
   inputs:
     app_location: './Scripts'
-    app_build_command: 'npm run build'
     output_location: './Scripts/dist/frontend3'
+    skip_app_build: true
     skip_api_build: true
     azure_static_web_apps_api_token: '7512473fe40c61445aac4cebda7e4c7f7de0d309cc8a0e0fde925c1c13e0086a5-57c7f44a-61aa-401c-9640-a7be4554571801e162889'
