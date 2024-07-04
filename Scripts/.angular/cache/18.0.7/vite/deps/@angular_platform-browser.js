@@ -36,8 +36,8 @@ import {
   withHttpTransferCacheOptions,
   withI18nSupport,
   withNoHttpTransferCache
-} from "./chunk-DIKTDJPS.js";
-import "./chunk-NKWK6WG7.js";
+} from "./chunk-2HVGG22W.js";
+import "./chunk-KR6GKBAP.js";
 export {
   BrowserModule,
   By,

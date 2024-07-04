@@ -14,6 +14,7 @@ import {
   EnvironmentInjector,
   ErrorHandler,
   EventEmitter,
+  GLOBAL_EVENT_DELEGATION,
   Host,
   IMAGE_CONFIG,
   IMAGE_CONFIG_DEFAULTS,
@@ -111,7 +112,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-NKWK6WG7.js";
+} from "./chunk-KR6GKBAP.js";
 
 // node_modules/@angular/common/fesm2022/common.mjs
 var _DOM = null;
@@ -2560,7 +2561,6 @@ function assertTemplate(property, templateRef) {
     throw new Error(`${property} must be a TemplateRef, but received '${stringify(templateRef)}'.`);
   }
 }
-var NG_SWITCH_USE_STRICT_EQUALS = true;
 var SwitchView = class {
   constructor(_viewContainerRef, _templateRef) {
     this._viewContainerRef = _viewContainerRef;
@@ -2607,10 +2607,7 @@ var _NgSwitch = class _NgSwitch {
   }
   /** @internal */
   _matchCase(value) {
-    const matched = NG_SWITCH_USE_STRICT_EQUALS ? value === this._ngSwitch : value == this._ngSwitch;
-    if ((typeof ngDevMode === "undefined" || ngDevMode) && matched !== (value == this._ngSwitch)) {
-      console.warn(formatRuntimeError(2001, `As of Angular v17 the NgSwitch directive uses strict equality comparison === instead of == to match different cases. Previously the case value "${stringifyValue(value)}" matched switch expression value "${stringifyValue(this._ngSwitch)}", but this is no longer the case with the stricter equality check. Your comparison results return different results using === vs. == and you should adjust your ngSwitch expression and / or values to conform with the strict equality requirements.`));
-    }
+    const matched = value === this._ngSwitch;
     this._lastCasesMatched ||= matched;
     this._lastCaseCheckIndex++;
     if (this._lastCaseCheckIndex === this._caseCount) {
@@ -2746,9 +2743,6 @@ var NgSwitchDefault = _NgSwitchDefault;
 })();
 function throwNgSwitchProviderNotFoundError(attrName, directiveName) {
   throw new RuntimeError(2e3, `An element with the "${attrName}" attribute (matching the "${directiveName}" directive) must be located inside an element with the "ngSwitch" attribute (matching "NgSwitch" directive)`);
-}
-function stringifyValue(value) {
-  return typeof value === "string" ? `'${value}'` : String(value);
 }
 var _NgPlural = class _NgPlural {
   constructor(_localization) {
@@ -3732,7 +3726,7 @@ function isPlatformBrowser(platformId) {
 function isPlatformServer(platformId) {
   return platformId === PLATFORM_SERVER_ID;
 }
-var VERSION = new Version("18.0.1");
+var VERSION = new Version("18.0.6");
 var _ViewportScroller = class _ViewportScroller {
 };
 _ViewportScroller.ɵprov = ɵɵdefineInjectable({
@@ -7861,6 +7855,42 @@ var DomEventsPlugin = _DomEventsPlugin;
     }]
   }], null);
 })();
+var _EventDelegationPlugin = class _EventDelegationPlugin extends EventManagerPlugin {
+  constructor(doc) {
+    super(doc);
+    this.delegate = inject(GLOBAL_EVENT_DELEGATION, {
+      optional: true
+    });
+  }
+  supports(eventName) {
+    return this.delegate ? this.delegate.supports(eventName) : false;
+  }
+  addEventListener(element, eventName, handler) {
+    return this.delegate.addEventListener(element, eventName, handler);
+  }
+  removeEventListener(element, eventName, callback) {
+    return this.delegate.removeEventListener(element, eventName, callback);
+  }
+};
+_EventDelegationPlugin.ɵfac = function EventDelegationPlugin_Factory(t) {
+  return new (t || _EventDelegationPlugin)(ɵɵinject(DOCUMENT));
+};
+_EventDelegationPlugin.ɵprov = ɵɵdefineInjectable({
+  token: _EventDelegationPlugin,
+  factory: _EventDelegationPlugin.ɵfac
+});
+var EventDelegationPlugin = _EventDelegationPlugin;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(EventDelegationPlugin, [{
+    type: Injectable
+  }], () => [{
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: [DOCUMENT]
+    }]
+  }], null);
+})();
 var MODIFIER_KEYS = ["alt", "control", "meta", "shift"];
 var _keyMap = {
   "\b": "Backspace",
@@ -8098,6 +8128,10 @@ var BROWSER_MODULE_PROVIDERS = [{
   useClass: KeyEventsPlugin,
   multi: true,
   deps: [DOCUMENT]
+}, {
+  provide: EVENT_MANAGER_PLUGINS,
+  useClass: EventDelegationPlugin,
+  multi: true
 }, DomRendererFactory2, SharedStylesHost, EventManager, {
   provide: RendererFactory2,
   useExisting: DomRendererFactory2
@@ -8871,7 +8905,7 @@ function provideClientHydration(...features) {
   }
   return makeEnvironmentProviders([typeof ngDevMode !== "undefined" && ngDevMode ? provideZoneJsCompatibilityDetector() : [], withDomHydration(), featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) || hasHttpTransferCacheOptions ? [] : withHttpTransferCache({}), providers]);
 }
-var VERSION2 = new Version("18.0.1");
+var VERSION2 = new Version("18.0.6");
 
 export {
   getDOM,
@@ -8923,23 +8957,23 @@ export {
 
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v18.0.1
+   * @license Angular v18.0.6
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/common/fesm2022/http.mjs:
   (**
-   * @license Angular v18.0.1
+   * @license Angular v18.0.6
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/platform-browser/fesm2022/platform-browser.mjs:
   (**
-   * @license Angular v18.0.1
+   * @license Angular v18.0.6
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-DIKTDJPS.js.map
+//# sourceMappingURL=chunk-2HVGG22W.js.map
