@@ -20,7 +20,6 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 /obj
-/packages
 *.vsidx
 
 # Visual Studio Code
