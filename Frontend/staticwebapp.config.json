@@ -1,5 +1,11 @@
 {
+<<<<<<< HEAD:Frontend/staticwebapp.config.json
     "navigationFallback": {
         "rewrite": "/index.html"
     }
+=======
+      "platform": {
+          "apiRuntime": "node:22"
+      }
+>>>>>>> parent of 9803995 (分開前端與後端專案):Scripts/staticwebapp.config.json
 }

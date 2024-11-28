@@ -12,8 +12,8 @@ Imports System.Runtime.CompilerServices
 Imports System.Web.Http
 Imports System.Web.Http.Controllers
 Imports System.Web.Http.Description
-Imports Alianbot.Areas.HelpPage.Models
-Imports Alianbot.Areas.HelpPage.ModelDescriptions
+Imports backend3.Areas.HelpPage.Models
+Imports backend3.Areas.HelpPage.ModelDescriptions
 
 Namespace Areas.HelpPage
     Public Module HelpPageConfigurationExtensions

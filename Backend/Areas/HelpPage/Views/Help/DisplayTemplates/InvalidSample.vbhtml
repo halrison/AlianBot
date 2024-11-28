@@ -1,4 +1,4 @@
-@Imports Alianbot.Areas.HelpPage
+@Imports backend3.Areas.HelpPage
 @ModelType InvalidSample
 
 @If HttpContext.Current.IsDebuggingEnabled Then

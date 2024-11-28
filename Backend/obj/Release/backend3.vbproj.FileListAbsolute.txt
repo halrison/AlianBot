@@ -1,0 +1,4 @@
+E:\Users\halrison\Documents\GitHub\Alianbot\Backend\obj\Release\backend3.vbproj.AssemblyReference.cache
+E:\Users\halrison\Documents\GitHub\Alianbot\Backend\obj\Release\backend3.Resources.resources
+E:\Users\halrison\Documents\GitHub\Alianbot\Backend\obj\Release\backend3.vbproj.GenerateResource.cache
+E:\Users\halrison\Documents\GitHub\Alianbot\Backend\obj\Release\backend3.vbproj.CoreCompileInputs.cache

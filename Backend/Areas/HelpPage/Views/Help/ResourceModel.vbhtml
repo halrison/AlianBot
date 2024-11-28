@@ -1,5 +1,5 @@
 @Imports System.Web.Http
-@Imports Alianbot.Areas.HelpPage.ModelDescriptions
+@Imports backend3.Areas.HelpPage.ModelDescriptions
 @ModelType ModelDescription
 
 <link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />

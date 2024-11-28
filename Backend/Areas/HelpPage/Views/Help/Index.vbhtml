@@ -2,7 +2,7 @@
 @Imports System.Web.Http.Controllers
 @Imports System.Web.Http.Description
 @Imports System.Collections.ObjectModel
-@Imports Alianbot.Areas.HelpPage
+@Imports backend3.Areas.HelpPage
 @ModelType Collection(Of ApiDescription)
 
 @Code

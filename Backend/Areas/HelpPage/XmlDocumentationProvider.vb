@@ -5,7 +5,7 @@ Imports System.Reflection
 Imports System.Web.Http.Controllers
 Imports System.Web.Http.Description
 Imports System.Xml.XPath
-Imports Alianbot.Areas.HelpPage.ModelDescriptions
+Imports backend3.Areas.HelpPage.ModelDescriptions
 
 Namespace Areas.HelpPage
     ''' <summary>

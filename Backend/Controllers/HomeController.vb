@@ -1,4 +1,6 @@
-﻿Public Class HomeController
+﻿Imports System.Web.Mvc
+
+Public Class HomeController
   Inherits System.Web.Mvc.Controller
 
   Function Index() As ActionResult

@@ -1,8 +1,8 @@
 Imports System
 Imports System.Web.Http
 Imports System.Web.Mvc
-Imports Alianbot.Areas.HelpPage.Models
-Imports Alianbot.Areas.HelpPage.ModelDescriptions
+Imports backend3.Areas.HelpPage.Models
+Imports backend3.Areas.HelpPage.ModelDescriptions
 
 Namespace Areas.HelpPage.Controllers
     ''' <summary>

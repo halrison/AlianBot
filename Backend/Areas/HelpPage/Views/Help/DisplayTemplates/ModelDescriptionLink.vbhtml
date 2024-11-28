@@ -1,4 +1,4 @@
-@Imports Alianbot.Areas.HelpPage.ModelDescriptions
+@Imports backend3.Areas.HelpPage.ModelDescriptions
 @ModelType Type
 @Code
     Dim modelDescription As ModelDescription = ViewBag.modelDescription

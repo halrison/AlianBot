@@ -1,6 +1,6 @@
 @Imports System.Web.Http
 @Imports System.Web.Http.Description
-@Imports Alianbot.Areas.HelpPage.Models
+@Imports backend3.Areas.HelpPage.Models
 @ModelType HelpPageApiModel
 
 @Code
