@@ -22,7 +22,7 @@
   "scripts": {
     "start": "refine dev",
     "build": "refine build",
-    "preview": "refine start",
+    "preview": "refine start"
   },
   "browserslist": {
     "production": [
