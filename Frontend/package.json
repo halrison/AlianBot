@@ -7,7 +7,7 @@
     "@refinedev/cli": "^2.16.39",
     "@refinedev/core": "^4.56.0",
     "@refinedev/react-router-v6": "^4.6.0",
-    "@refinedev/simple-rest": "^4.5.4",
+    "@refinedev/simple-rest": "^5.0.8",
     "@uiw/react-md-editor": "^3.25.6",
     "antd": "^5.22.2",
     "react": "^18.3.1",
