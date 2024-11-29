@@ -22,7 +22,6 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="firebase.json" />
     <Content Include="index.html" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
