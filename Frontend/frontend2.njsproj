@@ -12,7 +12,7 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <ScriptArguments>run start</ScriptArguments>
+    <ScriptArguments>run dev</ScriptArguments>
     <NodejsPort>5173</NodejsPort>
     <StartWebBrowser>True</StartWebBrowser>
     <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
@@ -21,35 +21,75 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".eslintrc.cjs" />
     <Content Include=".gitignore" />
+    <Content Include=".npmrc" />
+    <Content Include="eslint.config.js" />
+    <Content Include="public\vite.svg" />
+    <Content Include="src\App.css" />
+    <Content Include="src\assets\react.svg" />
+    <Content Include="src\assets\vite.svg" />
     <Content Include="index.html" />
+    <Content Include="nuget.config" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="Properties\PublishProfiles\BitBucket.pubxml.user" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <Content Include="Properties\PublishProfiles\IISProfile.pubxml.user" />
+    <Content Include="src\index.css" />
     <Content Include="staticwebapp.config.json" />
+    <Content Include="tsconfig.app.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tsconfig.node.json" />
     <Content Include="web.config" />
     <None Include="Properties\PublishProfiles\BitBucket.pubxml" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\manifest.json" />
     <Content Include="README.md" />
-    <Content Include="src\App.jsx" />
-    <Content Include="src\index.jsx" />
-    <Content Include="src\pages\posts\create.jsx" />
-    <Content Include="src\pages\posts\edit.jsx" />
-    <Content Include="src\pages\posts\index.jsx" />
-    <Content Include="src\pages\posts\list.jsx" />
-    <Content Include="src\pages\posts\show.jsx" />
-    <Content Include="vite.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="public\" />
     <Folder Include="src\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\components\" />
+    <Folder Include="src\components\header\" />
+    <Folder Include="src\contexts\" />
+    <Folder Include="src\contexts\color-mode\" />
     <Folder Include="src\pages\" />
+    <Folder Include="src\pages\commands\" />
+    <Folder Include="src\pages\forgotPassword\" />
+    <Folder Include="src\pages\login\" />
     <Folder Include="src\pages\posts\" />
+    <Folder Include="src\pages\register\" />
+    <Folder Include="src\providers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\App.tsx" />
+    <TypeScriptCompile Include="src\components\header\index.tsx" />
+    <TypeScriptCompile Include="src\components\index.ts" />
+    <TypeScriptCompile Include="src\contexts\color-mode\index.tsx" />
+    <TypeScriptCompile Include="src\index.tsx" />
+    <TypeScriptCompile Include="src\pages\commands\create.tsx" />
+    <TypeScriptCompile Include="src\pages\commands\edit.tsx" />
+    <TypeScriptCompile Include="src\pages\commands\index.ts" />
+    <TypeScriptCompile Include="src\pages\commands\list.tsx" />
+    <TypeScriptCompile Include="src\pages\commands\show.tsx" />
+    <TypeScriptCompile Include="src\pages\forgotPassword\index.tsx" />
+    <TypeScriptCompile Include="src\pages\login\index.tsx" />
+    <TypeScriptCompile Include="src\pages\posts\create.tsx" />
+    <TypeScriptCompile Include="src\pages\posts\edit.tsx" />
+    <TypeScriptCompile Include="src\pages\posts\index.ts" />
+    <TypeScriptCompile Include="src\pages\posts\list.tsx" />
+    <TypeScriptCompile Include="src\pages\posts\show.tsx" />
+    <TypeScriptCompile Include="src\pages\register\index.tsx" />
+    <TypeScriptCompile Include="src\providers\access-control-provider.tsx" />
+    <TypeScriptCompile Include="src\providers\auth-provider.tsx" />
+    <TypeScriptCompile Include="src\providers\data-provider.tsx" />
+    <TypeScriptCompile Include="src\providers\notification-provider.tsx" />
+    <TypeScriptCompile Include="src\vite-env.d.ts" />
+    <TypeScriptCompile Include="vite.config.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

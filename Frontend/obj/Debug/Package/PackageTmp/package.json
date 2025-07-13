@@ -1,0 +1,40 @@
+{
+  "name": "with-javascript",
+  "version": "3.25.0",
+  "private": true,
+  "dependencies": {
+    "@refinedev/antd": "^5.42.0",
+    "@refinedev/cli": "^2.16.36",
+    "@refinedev/core": "^4.53.0",
+    "@refinedev/react-router-v6": "^4.5.11",
+    "@refinedev/simple-rest": "^4.5.4",
+    "@uiw/react-md-editor": "^3.25.6",
+    "antd": "^5.19.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "firebase-tools": "^13.13.1",
+    "vite": "^4.5.3"
+  },
+  "scripts": {
+    "start": "refine dev",
+    "build": "refine build",
+    "preview": "refine start",
+    "publish": "firebase deploy"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

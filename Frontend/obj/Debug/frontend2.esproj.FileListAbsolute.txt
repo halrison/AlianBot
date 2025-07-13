@@ -1,0 +1,2 @@
+E:\Users\halrison\Documents\Visual Studio 2022\Templates\ProjectTemplates\JavaScript\frontend2\obj\Debug\frontend2.esproj.CoreCompileInputs.cache
+E:\Users\halrison\Documents\GitHub\Alianbot\Frontend\obj\Debug\frontend2.esproj.CoreCompileInputs.cache

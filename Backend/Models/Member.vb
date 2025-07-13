@@ -13,7 +13,6 @@ Imports System.Collections.Generic
 Partial Public Class Member
     Public Property id As Integer
     Public Property username As String
-
-    Public Overridable Property Vote As ICollection(Of Vote) = New HashSet(Of Vote)
+    Public Property password As String
 
 End Class

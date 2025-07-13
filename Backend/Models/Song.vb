@@ -13,5 +13,6 @@ Imports System.Collections.Generic
 Partial Public Class Song
     Public Property id As Integer
     Public Property requestedBy As String
+    Public Property url As String
 
 End Class

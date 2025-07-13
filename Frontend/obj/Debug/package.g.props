@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <PackageJsonName Condition="$(PackageJsonName) == ''">Frontend</PackageJsonName>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">0.1.0</PackageJsonVersion>
+    <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">true</PackageJsonPrivate>
+    <PackageJsonType Condition="$(PackageJsonType) == ''">module</PackageJsonType>
+    <PackageJsonDependenciesEmotionReact Condition="$(PackageJsonDependenciesEmotionReact) == ''">^11.8.2</PackageJsonDependenciesEmotionReact>
+    <PackageJsonDependenciesEmotionStyled Condition="$(PackageJsonDependenciesEmotionStyled) == ''">^11.8.1</PackageJsonDependenciesEmotionStyled>
+    <PackageJsonDependenciesMuiIconsMaterial Condition="$(PackageJsonDependenciesMuiIconsMaterial) == ''">^6.1.6</PackageJsonDependenciesMuiIconsMaterial>
+    <PackageJsonDependenciesMuiLab Condition="$(PackageJsonDependenciesMuiLab) == ''">^6.0.0-beta.14</PackageJsonDependenciesMuiLab>
+    <PackageJsonDependenciesMuiMaterial Condition="$(PackageJsonDependenciesMuiMaterial) == ''">^6.1.7</PackageJsonDependenciesMuiMaterial>
+    <PackageJsonDependenciesMuiXDataGrid Condition="$(PackageJsonDependenciesMuiXDataGrid) == ''">^7.22.2</PackageJsonDependenciesMuiXDataGrid>
+    <PackageJsonDependenciesRefinedevCli Condition="$(PackageJsonDependenciesRefinedevCli) == ''">^2.16.21</PackageJsonDependenciesRefinedevCli>
+    <PackageJsonDependenciesRefinedevCore Condition="$(PackageJsonDependenciesRefinedevCore) == ''">^4.47.1</PackageJsonDependenciesRefinedevCore>
+    <PackageJsonDependenciesRefinedevDevtools Condition="$(PackageJsonDependenciesRefinedevDevtools) == ''">^1.1.32</PackageJsonDependenciesRefinedevDevtools>
+    <PackageJsonDependenciesRefinedevInferencer Condition="$(PackageJsonDependenciesRefinedevInferencer) == ''">^5.1.1</PackageJsonDependenciesRefinedevInferencer>
+    <PackageJsonDependenciesRefinedevKbar Condition="$(PackageJsonDependenciesRefinedevKbar) == ''">^1.3.6</PackageJsonDependenciesRefinedevKbar>
+    <PackageJsonDependenciesRefinedevMui Condition="$(PackageJsonDependenciesRefinedevMui) == ''">^6.0.0</PackageJsonDependenciesRefinedevMui>
+    <PackageJsonDependenciesRefinedevReactHookForm Condition="$(PackageJsonDependenciesRefinedevReactHookForm) == ''">^4.8.14</PackageJsonDependenciesRefinedevReactHookForm>
+    <PackageJsonDependenciesRefinedevReactRouter Condition="$(PackageJsonDependenciesRefinedevReactRouter) == ''">^1.0.0</PackageJsonDependenciesRefinedevReactRouter>
+    <PackageJsonDependenciesRefinedevSimpleRest Condition="$(PackageJsonDependenciesRefinedevSimpleRest) == ''">^5.0.1</PackageJsonDependenciesRefinedevSimpleRest>
+    <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^18.0.0</PackageJsonDependenciesReact>
+    <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^18.0.0</PackageJsonDependenciesReactDom>
+    <PackageJsonDependenciesReactHookForm Condition="$(PackageJsonDependenciesReactHookForm) == ''">^7.30.0</PackageJsonDependenciesReactHookForm>
+    <PackageJsonDependenciesReactRouter Condition="$(PackageJsonDependenciesReactRouter) == ''">^7.0.2</PackageJsonDependenciesReactRouter>
+    <PackageJsonDevdependenciesTypesNode Condition="$(PackageJsonDevdependenciesTypesNode) == ''">^18.16.2</PackageJsonDevdependenciesTypesNode>
+    <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^18.0.0</PackageJsonDevdependenciesTypesReact>
+    <PackageJsonDevdependenciesTypesReactDom Condition="$(PackageJsonDevdependenciesTypesReactDom) == ''">^18.0.0</PackageJsonDevdependenciesTypesReactDom>
+    <PackageJsonDevdependenciesTypescriptEslintEslintPlugin Condition="$(PackageJsonDevdependenciesTypescriptEslintEslintPlugin) == ''">^5.57.1</PackageJsonDevdependenciesTypescriptEslintEslintPlugin>
+    <PackageJsonDevdependenciesTypescriptEslintParser Condition="$(PackageJsonDevdependenciesTypescriptEslintParser) == ''">^5.57.1</PackageJsonDevdependenciesTypescriptEslintParser>
+    <PackageJsonDevdependenciesVitejsPluginReact Condition="$(PackageJsonDevdependenciesVitejsPluginReact) == ''">^4.0.0</PackageJsonDevdependenciesVitejsPluginReact>
+    <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^8.38.0</PackageJsonDevdependenciesEslint>
+    <PackageJsonDevdependenciesEslintPluginReactHooks Condition="$(PackageJsonDevdependenciesEslintPluginReactHooks) == ''">^4.6.0</PackageJsonDevdependenciesEslintPluginReactHooks>
+    <PackageJsonDevdependenciesEslintPluginReactRefresh Condition="$(PackageJsonDevdependenciesEslintPluginReactRefresh) == ''">^0.3.4</PackageJsonDevdependenciesEslintPluginReactRefresh>
+    <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">^5.4.2</PackageJsonDevdependenciesTypescript>
+    <PackageJsonDevdependenciesVite Condition="$(PackageJsonDevdependenciesVite) == ''">^4.3.1</PackageJsonDevdependenciesVite>
+    <PackageJsonScriptsDev Condition="$(PackageJsonScriptsDev) == ''">refine dev</PackageJsonScriptsDev>
+    <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">tsc &amp;&amp; refine build</PackageJsonScriptsBuild>
+    <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">refine start</PackageJsonScriptsStart>
+    <PackageJsonScriptsRefine Condition="$(PackageJsonScriptsRefine) == ''">refine</PackageJsonScriptsRefine>
+    <PackageJsonBrowserslistProduction Condition="$(PackageJsonBrowserslistProduction) == ''">[
+  "\u003E0.2%",
+  "not dead",
+  "not op_mini all"
+]</PackageJsonBrowserslistProduction>
+    <PackageJsonBrowserslistDevelopment Condition="$(PackageJsonBrowserslistDevelopment) == ''">[
+  "last 1 chrome version",
+  "last 1 firefox version",
+  "last 1 safari version"
+]</PackageJsonBrowserslistDevelopment>
+    <PackageJsonRefineProjectid Condition="$(PackageJsonRefineProjectid) == ''">FuXlxG-RM4Zvo-NuLnNA</PackageJsonRefineProjectid>
+  </PropertyGroup>
+</Project>

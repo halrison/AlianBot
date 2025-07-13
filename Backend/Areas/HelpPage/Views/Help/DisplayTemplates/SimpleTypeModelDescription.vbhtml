@@ -1,3 +1,0 @@
-@Imports backend3.Areas.HelpPage.ModelDescriptions
-@ModelType SimpleTypeModelDescription
-@Model.Documentation

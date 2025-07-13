@@ -12,8 +12,7 @@ Imports System.Collections.Generic
 
 Partial Public Class Vote
     Public Property id As Integer
-    Public Property launchedBy As Integer
-
-    Public Overridable Property Member As Member
+    Public Property launchedBy As String
+    Public Property topic As String
 
 End Class

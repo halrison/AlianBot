@@ -22,9 +22,9 @@ Partial Public Class AlianbotEntities
         Throw New UnintentionalCodeFirstException()
     End Sub
 
+    Public Overridable Property Member() As DbSet(Of Member)
     Public Overridable Property Song() As DbSet(Of Song)
-    Public Overridable Property MemberSet() As DbSet(Of Member)
-    Public Overridable Property VoteSet() As DbSet(Of Vote)
     Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
+    Public Overridable Property Vote() As DbSet(Of Vote)
 
 End Class
